@@ -1,6 +1,30 @@
 function findFirstDuplicate(arr) {
   // type your code here
+
+  // find the first duplicate value that occurs by:
+  // creating a new set which passes array inside\
+  // if the value already exists, then return that value
+  // if no duplicates, then return -1
+
+  let elementSet = new Set();
+
+  for (let i = 0; i < arr.length; i++) {
+    if (elementSet.has(arr[i])) return arr[i];
+      elementSet.add(arr[i]);
+    }
+  return -1;
+  
 }
+
+// Gehrig's solution:
+// function findFirstDuplicate(arr) {
+//   for (let i = 0; i < arr.length; i++){
+//     if (arr[i] === arr[i + 1]){
+//       return arr[i]
+//     } else return -1
+//   }
+// }
+
 
 if (require.main === module) {
   // add your own tests in here
